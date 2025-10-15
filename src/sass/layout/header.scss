@@ -1,0 +1,106 @@
+// Responsive Hero Image
+@include breakpoint(0, 749) {
+  header {
+    background: url('./images/chris_hero-750.webp'), black;
+  }
+}
+
+@include breakpoint(750, 1499) {
+  header {
+    background: url('./images/chris_hero-1500.webp'), black;
+  }
+}
+
+@include breakpoint(1500) {
+  header {
+    background: url('./images/chris_hero-3000.webp'), black;
+  }
+}
+
+// 2x
+@media only screen and (max-width: 349px) and (min-resolution: 192dpi) {
+  header {
+    background: url('./images/chris_hero-750.webp'), black;
+  }
+}
+
+@media only screen and (min-width: 350px) and (max-width: 749px) and (min-resolution: 192dpi) {
+  header {
+    background: url('./images/chris_hero-1500.webp'), black;
+  }
+}
+
+@media only screen and (min-width: 750px) and (min-resolution: 192dpi) {
+  header {
+    background: url('./images/chris_hero-3000.webp'), black;
+  }
+}
+
+header {
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  grid-template-rows: min-content 1fr;
+  min-height: 80vh;
+  background-repeat: no-repeat, no-repeat;
+
+  & > a {
+    font-size: var(--stf);
+    color: var(--negative);
+    text-decoration: none;
+
+    display: inline-block;
+    margin-block-start: var(--stp);
+    margin-inline-start: var(--stp);
+
+    strong {
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  }
+
+  div.hero-text {
+    @include maxwidth;
+    grid-column-start: 1;
+    grid-column-end: span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: var(--stp);
+    padding-inline: var(--stp);
+
+    h1 {
+      color: var(--primary);
+    }
+  }
+}
+
+@include breakpoint(0, $mobile) {
+  header {
+    background-size: 150%, cover;
+    background-position: center, center;
+
+    div.hero-text {
+      & > * {
+        margin-left: 50%;
+      }
+    }
+  }
+}
+
+@include breakpoint($desktop) {
+  header {
+    background-size: contain, cover;
+    background-position: 95% center, center;
+    
+    div.hero-text {
+      margin-block-end: 10%;
+
+      h1 {
+        br {
+          @include hidden;
+        }
+      }
+    }
+  }
+}

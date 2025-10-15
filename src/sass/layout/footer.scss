@@ -1,0 +1,48 @@
+footer {
+  position: relative;
+  background-color: var(--secondary-dark);
+  padding-block: var(--stp);
+  padding-inline: var(--stp);
+  color: var(--negative);
+  font-size: var(--stf);
+
+  p:first-child {
+    font-size: var(--fss);
+  }
+
+  .imprint {
+    color: var(--primary);
+    text-decoration: none;
+  }
+
+  h2, h3 {
+    margin-block-start: var(--stp);
+  }
+
+  ul li a {
+    color: var(--negative);
+    word-break: keep-all;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block;
+  }
+}
+
+@include breakpoint(0, $mobile) {
+  footer {
+    .imprint {
+      display: inline-block;
+      margin-block: var(--stp);
+    }
+  }
+}
+
+@include breakpoint($desktop) {
+  footer {
+    .imprint {
+      position: absolute;
+      inset-block-start: var(--stp);
+      inset-inline-end: var(--stp);
+    }
+  }
+}

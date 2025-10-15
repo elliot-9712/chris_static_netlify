@@ -1,0 +1,64 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-family);
+  font-size: var(--root-font-size);
+  // font-weight: ;
+  // color: ;
+  // scroll-behavior: smooth;
+}
+
+body {
+  // line-height:
+}
+
+
+h1, h2 {
+  & + p, & + ul {
+    // margin-top: ;
+  }
+}
+
+h1 {
+  font-size: var(--fsl)
+}
+
+h2 {
+  // font-size
+}
+
+
+.maxwidth-container {
+  margin-inline: auto;
+  // max-width: 
+}
+
+// ...
+
+.button {
+  color: var(--negative);
+  text-transform: uppercase;
+  font-size: var(--stf);
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  border: solid 1px var(--primary-light);
+  transition: background-color 0.25s ease;
+
+  &:hover {
+    background-color: var(--primary-light);
+  }
+
+  @include breakpoint(0, $mobile) {
+    padding-block: rem(14);
+    padding-inline: rem(26);
+  }
+
+  @include breakpoint($desktop) {
+    padding-block: rem(22);
+    padding-inline: rem(36);
+  }
+}
+

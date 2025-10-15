@@ -1,0 +1,381 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+.show {
+  display: block;
+  visibility: visible;
+}
+
+:root {
+  --font-family: "Source Sans 3";
+  --secondary-dark: hsla(0, 0%, 21%, 1);
+  --secondary: hsla(0, 0%, 35%, 1);
+  --secondary-light: hsla(0, 0%, 84%, 1);
+  --secondary-extra-light: hsla(0, 0%, 97%, 1);
+  --negative: hsla(0, 0%, 100%, 1);
+  --primary-dark: hsla(26, 62%, 57%, 1);
+  --primary: hsla(26, 82%, 65%, 1);
+  --primary-light: hsla(26, 100%, 72%, 1);
+  --primary-extra-light: hsla(23, 100%, 97%, 1);
+}
+
+:root {
+  --stf: 1rem;
+  --fss: 1.375rem;
+  --fsl: 2.375rem;
+  --stp: 1rem;
+  --mdp: 2rem;
+  --bp: 4.5rem;
+}
+
+@media (min-width: 37.5rem) {
+  :root {
+    --stf: 1.25rem;
+    --fss: 2.125rem;
+    --fsl: 4.375rem;
+    --stp: 2.5rem;
+    --bp: calc(3rem + 2vw);
+  }
+}
+/* source-sans-3-300 - latin_latin-ext */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Source Sans 3";
+  font-style: normal;
+  font-weight: 300;
+  src: url("./fonts/source-sans-3-v19-latin_latin-ext-300.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* source-sans-3-600 - latin_latin-ext */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Source Sans 3";
+  font-style: normal;
+  font-weight: 600;
+  src: url("./fonts/source-sans-3-v19-latin_latin-ext-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-family);
+  font-size: var(--root-font-size);
+}
+
+h1 {
+  font-size: var(--fsl);
+}
+
+.maxwidth-container {
+  margin-inline: auto;
+}
+
+.button {
+  color: var(--negative);
+  text-transform: uppercase;
+  font-size: var(--stf);
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  border: solid 1px var(--primary-light);
+  transition: background-color 0.25s ease;
+}
+.button:hover {
+  background-color: var(--primary-light);
+}
+@media (min-width: 0rem) and (max-width: 37.4375rem) {
+  .button {
+    padding-block: 0.875rem;
+    padding-inline: 1.625rem;
+  }
+}
+@media (min-width: 37.5rem) {
+  .button {
+    padding-block: 1.375rem;
+    padding-inline: 2.25rem;
+  }
+}
+
+@media (min-width: 0rem) and (max-width: 37.4375rem) {
+  #hamburger {
+    all: unset;
+    position: fixed;
+    z-index: 3;
+    inset-block-start: 0;
+    inset-inline-end: 0;
+    padding: var(--stp);
+    height: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  #hamburger [class^=line-] {
+    height: 1px;
+    border: 1px solid var(--primary-light);
+    transition: all 0.3s ease-out;
+    display: inline-block;
+  }
+  #hamburger .line-1 {
+    width: 25px;
+  }
+  #hamburger .line-2 {
+    margin-block-start: 8px;
+    margin-inline-start: 9px;
+    width: 16px;
+  }
+  #hamburger.mobile-menu-open [class^=line-] {
+    margin-block-start: 4px;
+    transform-origin: center;
+  }
+  #hamburger.mobile-menu-open .line-1 {
+    transform: rotate(-45deg);
+  }
+  #hamburger.mobile-menu-open .line-2 {
+    width: 25px;
+    margin-inline-start: 0;
+    margin-block-start: -2px;
+    transform: rotate(45deg);
+  }
+}
+@media (min-width: 0rem) and (max-width: 37.4375rem) {
+  #mainnav ul {
+    position: fixed;
+    z-index: 1;
+    inset-block-start: 0;
+    inset-inline-end: 0;
+    visibility: hidden;
+    transform: translateX(100%);
+    transition: all 0.25s ease-out;
+    padding: var(--stp);
+    background-color: var(--secondary-dark);
+    width: 80%;
+    height: 100vh;
+    font-size: var(--fss);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--mdp);
+  }
+  #mainnav #hamburger.mobile-menu-open + ul {
+    visibility: visible;
+    transform: translateX(0);
+  }
+  #mainnav a {
+    color: var(--negative);
+    text-decoration: none;
+  }
+  #mainnav li:first-child {
+    margin-block-start: calc(var(--mdp) + 1em);
+  }
+}
+@media (min-width: 37.5rem) {
+  nav {
+    margin-block-start: var(--stp);
+    margin-inline-end: var(--stp);
+  }
+  nav button#hamburger {
+    display: none;
+    visibility: hidden;
+  }
+  nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+  }
+  nav ul li {
+    display: inline-block;
+  }
+  nav ul li a {
+    font-size: var(--stf);
+    color: var(--primary-light);
+    text-underline-offset: 0.625rem;
+    margin-left: 1.875rem;
+    white-space: nowrap;
+  }
+}
+@media (min-width: 0rem) and (max-width: 46.8125rem) {
+  header {
+    background: url("./images/chris_hero-750.webp"), black;
+  }
+}
+@media (min-width: 46.875rem) and (max-width: 93.6875rem) {
+  header {
+    background: url("./images/chris_hero-1500.webp"), black;
+  }
+}
+@media (min-width: 93.75rem) {
+  header {
+    background: url("./images/chris_hero-3000.webp"), black;
+  }
+}
+@media only screen and (max-width: 349px) and (min-resolution: 192dpi) {
+  header {
+    background: url("./images/chris_hero-750.webp"), black;
+  }
+}
+@media only screen and (min-width: 350px) and (max-width: 749px) and (min-resolution: 192dpi) {
+  header {
+    background: url("./images/chris_hero-1500.webp"), black;
+  }
+}
+@media only screen and (min-width: 750px) and (min-resolution: 192dpi) {
+  header {
+    background: url("./images/chris_hero-3000.webp"), black;
+  }
+}
+header {
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  grid-template-rows: min-content 1fr;
+  min-height: 80vh;
+  background-repeat: no-repeat, no-repeat;
+}
+header > a {
+  font-size: var(--stf);
+  color: var(--negative);
+  text-decoration: none;
+  display: inline-block;
+  margin-block-start: var(--stp);
+  margin-inline-start: var(--stp);
+}
+header > a strong {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+header div.hero-text {
+  margin-inline: auto;
+  width: 100%;
+  max-width: min(90vw, 100rem);
+  grid-column-start: 1;
+  grid-column-end: span 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: var(--stp);
+  padding-inline: var(--stp);
+}
+header div.hero-text h1 {
+  color: var(--primary);
+}
+
+@media (min-width: 0rem) and (max-width: 37.4375rem) {
+  header {
+    background-size: 150%, cover;
+    background-position: center, center;
+  }
+  header div.hero-text > * {
+    margin-left: 50%;
+  }
+}
+@media (min-width: 37.5rem) {
+  header {
+    background-size: contain, cover;
+    background-position: 95% center, center;
+  }
+  header div.hero-text {
+    margin-block-end: 10%;
+  }
+  header div.hero-text h1 br {
+    display: none;
+    visibility: hidden;
+  }
+}
+footer {
+  position: relative;
+  background-color: var(--secondary-dark);
+  padding-block: var(--stp);
+  padding-inline: var(--stp);
+  color: var(--negative);
+  font-size: var(--stf);
+}
+footer p:first-child {
+  font-size: var(--fss);
+}
+footer .imprint {
+  color: var(--primary);
+  text-decoration: none;
+}
+footer h2, footer h3 {
+  margin-block-start: var(--stp);
+}
+footer ul li a {
+  color: var(--negative);
+  word-break: keep-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: block;
+}
+
+@media (min-width: 0rem) and (max-width: 37.4375rem) {
+  footer .imprint {
+    display: inline-block;
+    margin-block: var(--stp);
+  }
+}
+@media (min-width: 37.5rem) {
+  footer .imprint {
+    position: absolute;
+    inset-block-start: var(--stp);
+    inset-inline-end: var(--stp);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

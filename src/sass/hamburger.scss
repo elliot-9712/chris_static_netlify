@@ -1,0 +1,56 @@
+@include breakpoint(0, $mobile) {
+  #hamburger {
+    all: unset;
+    // instead of
+    // background-color: transparent;
+    // border: none;
+
+    position: fixed;
+    z-index: 3;
+    inset-block-start: 0; // top: 0;
+    inset-inline-end: 0; // right: 0;
+    padding: var(--stp);
+    height: 1em;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+
+
+    [class^=line-] {
+      height: 1px;
+      border: 1px solid var(--primary-light);
+      transition: all 0.3s ease-out;
+      display: inline-block;
+    }
+
+    .line-1 {
+      width: 25px;
+    }
+
+    .line-2 {
+      margin-block-start: 8px; // margin-top
+      margin-inline-start: 9px; // margin-left; makes the line right-aligned (9 + 16 = 25)
+      width: 16px;
+    }
+        &.mobile-menu-open {
+      [class^=line-] {
+        margin-block-start: 4px;
+        transform-origin: center;
+      }
+
+      .line-1 {
+        transform: rotate(-45deg);
+      }
+
+      .line-2 {
+        width: 25px;
+        margin-inline-start: 0; // margin-left
+        margin-block-start: -2px; // margin-top
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
+

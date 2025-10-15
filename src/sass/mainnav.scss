@@ -1,0 +1,67 @@
+// in mainnav.scss
+@include breakpoint(0, $mobile) {
+  #mainnav {
+    ul {
+      position: fixed;
+      z-index: 1;
+      inset-block-start: 0; // top
+      inset-inline-end: 0; // right
+      visibility: hidden;
+      transform: translateX(100%);
+      transition: all 0.25s ease-out;
+      padding: var(--stp);
+      background-color: var(--secondary-dark); //replace with correct color / variable
+      width: 80%;
+      height: 100vh;
+      font-size: var(--fss);
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    gap: var(--mdp);
+    }
+
+    #hamburger.mobile-menu-open + ul {
+      visibility: visible;
+      transform: translateX(0);
+    }
+    a {
+        color: var(--negative);
+        text-decoration: none;
+    }
+
+    li:first-child {
+        margin-block-start: calc(var(--mdp) + 1em);
+    }
+  }
+}
+
+@include breakpoint($desktop) {
+     nav {
+      margin-block-start: var(--stp);
+      margin-inline-end: var(--stp);
+
+      button#hamburger {
+        @include hidden;
+      }
+
+      ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: flex-end;
+
+        li {
+          display: inline-block;
+
+          a {
+            font-size: var(--stf);
+            color: var(--primary-light);
+            text-underline-offset: rem(10);
+            margin-left: rem(30);
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+}
