@@ -26,7 +26,25 @@ h1 {
 }
 
 h2 {
-  // font-size
+  font-size: var(--fsm);
+  color: var(--primary-dark);
+}
+
+h3 {
+  font-size: var(--fss);
+  color: var(--primary-light);
+}
+
+hgroup {
+  p {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: var(--stf);
+  }
+}
+
+main section {
+  margin-block-start: var(--bp);
 }
 
 

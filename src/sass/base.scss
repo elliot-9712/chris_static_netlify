@@ -45,3 +45,9 @@
   width: 100%;
   max-width: min(90vw, 100rem);
 }
+
+@mixin contentwidth {
+  margin-inline: auto;
+  inline-size: 90vw;
+  max-inline-size: min(90vw, 100rem);;
+}
