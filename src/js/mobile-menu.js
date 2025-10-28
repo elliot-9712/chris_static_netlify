@@ -1,4 +1,3 @@
-// neue Datei src/js/mobile-menu.js
 const mobileMenu = () => {
   const nav = document.querySelector('#mainnav')
   const list = nav.querySelector('ul');

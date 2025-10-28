@@ -17,8 +17,7 @@
     align-items: flex-end;
     justify-content: center;
 
-
-    [class^=line-] {
+    [class^='line-'] {
       height: 1px;
       border: 1px solid var(--primary-light);
       transition: all 0.3s ease-out;
@@ -34,8 +33,9 @@
       margin-inline-start: 9px; // margin-left; makes the line right-aligned (9 + 16 = 25)
       width: 16px;
     }
-        &.mobile-menu-open {
-      [class^=line-] {
+
+    &.mobile-menu-open {
+      [class^='line-'] {
         margin-block-start: 4px;
         transform-origin: center;
       }
@@ -53,4 +53,3 @@
     }
   }
 }
-

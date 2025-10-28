@@ -1,4 +1,6 @@
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
 
@@ -14,15 +16,16 @@ body {
   // line-height:
 }
 
-
-h1, h2 {
-  & + p, & + ul {
+h1,
+h2 {
+  & + p,
+  & + ul {
     // margin-top: ;
   }
 }
 
 h1 {
-  font-size: var(--fsl)
+  font-size: var(--fsl);
 }
 
 h2 {
@@ -43,14 +46,13 @@ hgroup {
   }
 }
 
-main section {
-  margin-block-start: var(--bp);
-}
-
-
 .maxwidth-container {
   margin-inline: auto;
-  // max-width: 
+  // max-width:
+}
+
+main section {
+  margin-block-start: var(--bp);
 }
 
 // ...
@@ -69,7 +71,7 @@ main section {
     background-color: var(--primary-light);
   }
 
-  @include breakpoint(0, $mobile) {
+  @include breakpoint(0, $tablet-end) {
     padding-block: rem(14);
     padding-inline: rem(26);
   }
@@ -79,4 +81,3 @@ main section {
     padding-inline: rem(36);
   }
 }
-

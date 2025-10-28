@@ -1,0 +1,65 @@
+section#about {
+  background-color: var(--primary-extra-light);
+  padding-block: var(--bp);
+
+  .about-wrapper {
+    .about-image {
+      img {
+        width: 100%;
+      }
+    }
+
+    .about-content {
+      .text {
+        font-size: var(--stf);
+        line-height: 1.5;
+        color: var(--secondary);
+
+        * {
+          margin-block-start: var(--stp);
+        }
+
+        .button {
+          color: black;
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint(0, $tablet-end) {
+  .about-content {
+    margin-block-start: var(--stp);
+    @include contentwidth;
+  }
+}
+
+@include breakpoint($desktop, 9999) {
+  section#about {
+    .about-wrapper {
+      @include contentwidth;
+
+      display: flex;
+      gap: var(--stp);
+
+      .col {
+        width: 50%;
+      }
+
+      .about-image {
+        position: relative;
+
+        img {
+          position: absolute;
+          height: 100%;
+          object-fit: cover;
+          object-position: 20% center;
+        }
+      }
+
+      .about-content {
+        padding: var(--stp);
+      }
+    }
+  }
+}

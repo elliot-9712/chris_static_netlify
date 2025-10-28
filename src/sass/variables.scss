@@ -1,33 +1,35 @@
 :root {
-    // FONTS
-    --font-family: 'Source Sans 3';
+  // FONTS
+  --font-family: 'Source Sans 3';
 
-    // COLORS
-    --secondary-dark: hsla(0, 0%, 21%, 1);
-    --secondary: hsla(0, 0%, 35%, 1);
-    --secondary-light: hsla(0, 0%, 84%, 1);
-    --secondary-extra-light: hsla(0, 0%, 97%, 1);
-    --negative: hsla(0, 0%, 100%, 1);
-    --primary-dark: hsla(26, 62%, 57%, 1);
-    --primary: hsla(26, 82%, 65%, 1);
-    --primary-light: hsla(26, 100%, 72%, 1);
-    --primary-extra-light: hsla(23, 100%, 97%, 1);
+  // COLORS
+  --secondary-dark: hsla(0, 0%, 21%, 1);
+  --secondary: hsla(0, 0%, 35%, 1);
+  --secondary-light: hsla(0, 0%, 84%, 1);
+  --secondary-extra-light: hsla(0, 0%, 97%, 1);
+  --negative: hsla(0, 0%, 100%, 1);
+  --primary-dark: hsla(26, 62%, 57%, 1);
+  --primary: hsla(26, 82%, 65%, 1);
+  --primary-light: hsla(26, 100%, 72%, 1);
+  --primary-extra-light: hsla(23, 100%, 97%, 1);
 }
 
 // BREAKPOINTS
 $mobile: 599; // passe diesen Wert später an
-$desktop: $mobile + 1;
+$tablet: $mobile + 1;
+$tablet-end: 1024;
+$desktop: $tablet-end + 1;
 
 // VIEWPORT BASED VARIABLES
 :root {
   --stf: 1rem; // standard font-size 16px;
   --fss: 1.375rem; // font-size small 22px
-  --fsm: 1.75rem; // font-size medium 28px
+  --fsm: 1.75rem; // font-size medium: 28px
   --fsl: 2.375rem; // font-size large: 38px
   // more font-sizes
+  --smp: 0.5rem; // small padding or margin 8px
   --stp: 1rem; // standard padding or margin 16px
   --mdp: 2rem; // medium padding or margin 32px
-  --lgp: 2.9735rem; // large paddig or margin 47px 
   // more paddings
   --bp: 4.5rem; // standard padding for sections/components
 }
@@ -36,12 +38,12 @@ $desktop: $mobile + 1;
   :root {
     --stf: 1.25rem; // standard font-size 20px
     --fss: 2.125rem; // font-size small 34px
-    --fsm: 3.375rem; // font-size medium 54px
+    --fsm: 3.375rem; // font-size medium: 54px
     --fsl: 4.375rem; // font-size large: 70px
     // ...
-    --stp: 1.25rem; // standard-padding 20px
-    --mdp: 2rem; // medium-padding 32px
-    --lgp: 10.25rem; // large-padding 164px
+    --smp: 0.75rem; // small padding or margin 12px
+    --stp: 2.5rem; // standard-padding 20px
+    --mdp: 5rem; // medium padding or margin 40px
     // ...
     --bp: calc(3rem + 2vw);
   }

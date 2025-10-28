@@ -15,7 +15,8 @@ footer {
     text-decoration: none;
   }
 
-  h2, h3 {
+  h2,
+  h3 {
     margin-block-start: var(--stp);
   }
 
@@ -37,7 +38,7 @@ footer {
   }
 }
 
-@include breakpoint($desktop) {
+@include breakpoint($tablet) {
   footer {
     .imprint {
       position: absolute;

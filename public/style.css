@@ -69,6 +69,7 @@ table {
   --secondary-light: hsla(0, 0%, 84%, 1);
   --secondary-extra-light: hsla(0, 0%, 97%, 1);
   --negative: hsla(0, 0%, 100%, 1);
+  --positive: hsla(0, 0%, 0%, 1);
   --primary-dark: hsla(26, 62%, 57%, 1);
   --primary: hsla(26, 82%, 65%, 1);
   --primary-light: hsla(26, 100%, 72%, 1);
@@ -567,6 +568,81 @@ section#workshops .levels .level blockquote p {
     position: relative;
     top: calc((var(--stp) - 10px) * -1);
     right: calc((var(--stp) + 20px) * -1);
+  }
+}
+@media (min-width: 0rem) and (max-width: 37.4375rem) {
+  section#about {
+    background-color: var(--primary-extra-light);
+    padding: var(--mdp) 0;
+  }
+  section#about img {
+    padding-top: var(--mdp);
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: left;
+  }
+  section#about hgroup {
+    margin: var(--stp);
+    line-height: 1.5rem;
+  }
+  section#about hgroup h2 {
+    font-size: var(--fsm);
+  }
+  section#about .text {
+    margin: var(--stp);
+    line-height: 1.5rem;
+    color: var(--secondary-dark);
+    margin-inline-end: var(--mdp);
+  }
+  section#about .text p {
+    margin: var(--stp) 0;
+  }
+  section#about .button {
+    margin: var(--mdp) 0;
+    color: var(--positive);
+  }
+}
+@media (min-width: 37.5rem) {
+  section#about {
+    background-color: var(--primary-extra-light);
+    padding: var(--lgp) 0;
+  }
+  section#about .about-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    margin-inline-end: 8.125rem;
+    height: auto;
+  }
+  section#about img {
+    display: block;
+    max-width: 100%;
+    object-position: left;
+    margin-inline-start: 8.125rem;
+  }
+  section#about .about-wrapper .about-content {
+    margin: var(--mdp);
+    align-self: stretch;
+  }
+  section#about .about-content {
+    display: flex;
+    flex-direction: column;
+  }
+  section#about hgroup h2 {
+    font-size: var(--fsm);
+  }
+  section#about .text {
+    font-size: var(--stf);
+    color: var(--secondary-dark);
+  }
+  section#about .text p {
+    margin: 1rem 0;
+    line-height: 1.5rem;
+  }
+  section#about .about-content .text .button {
+    color: var(--positive);
+    align-items: flex-end;
   }
 }
 

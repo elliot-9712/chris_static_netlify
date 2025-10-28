@@ -1,11 +1,3 @@
-<!--
-    TODO: – Add title
-    – Add keywords & description
-    - Run https://realfavicongenerator.net/ for favicons, tile & touchicons
-    – Add og image & info
-    – Host fonts locally with https://google-webfonts-helper.herokuapp.com/fonts
--->
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -97,8 +89,16 @@
             </section>
 
             <section id="about">
-                <img src="./images/chris_portrait.webp" alt="Portrait photo of Chris Alexander">
+                <div class="about-wrapper">
+                    <img
+                    srcset="./images/chris_portrait-3000.webp 3000w, ./images/chris_portrait-1500.webp 1500w, ./images/chris_portrait-750.webp 750w"
+                    sizes="(max-width: 799px) calc(100vw - 2rem), (max-width: 1600px) 100vh, 750px"
+                    loading="lazy"
+                    src="./images/chris_portrait-750.webp" alt="Portrait of Chris"
+                    >
 
+
+            <div class="about-content">
                 <hgroup>
                     <p>Why I teach</p>
                     <h2>Hi, I'm Chris</h2>
@@ -109,6 +109,8 @@
                     <p>ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
                     <a href="#" class="button">Learn more</a>
                 </div> <!-- ADD for CSS -->
+                </div>
+                </div>
             </section>
             <section id="news">
 

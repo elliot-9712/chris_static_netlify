@@ -7,7 +7,6 @@ section#workshops {
 
       & > img {
         background-color: var(--secondary);
-        padding: var(--mdp);
         clip-path: circle();
       }
 
@@ -16,6 +15,8 @@ section#workshops {
           font-size: var(--stf);
           color: var(--negative);
           margin-block-end: var(--stp);
+          margin-block-start: var(--smp);
+          line-height: 1.2;
         }
       }
 
@@ -32,7 +33,7 @@ section#workshops {
   }
 }
 
-@include breakpoint(0, $mobile) {
+@include breakpoint(0, $tablet-end) {
   section#workshops {
     .levels {
       .level {
@@ -47,6 +48,7 @@ section#workshops {
         & > img {
           inline-size: rem(115);
           margin-block-start: rem(calc(-115 / 2));
+          padding: var(--mdp);
         }
 
         .count {
@@ -101,6 +103,13 @@ section#workshops {
         padding-block: var(--stp);
         padding-inline: var(--stp);
         gap: rem(75);
+
+        & > img {
+          padding: min(2.5vw, var(--mdp));
+          width: 100%;
+          align-self: center;
+          min-width: 8rem;
+        }
 
         .count {
           position: absolute;
