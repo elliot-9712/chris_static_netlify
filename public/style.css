@@ -69,7 +69,6 @@ table {
   --secondary-light: hsla(0, 0%, 84%, 1);
   --secondary-extra-light: hsla(0, 0%, 97%, 1);
   --negative: hsla(0, 0%, 100%, 1);
-  --positive: hsla(0, 0%, 0%, 1);
   --primary-dark: hsla(26, 62%, 57%, 1);
   --primary: hsla(26, 82%, 65%, 1);
   --primary-light: hsla(26, 100%, 72%, 1);
@@ -81,21 +80,21 @@ table {
   --fss: 1.375rem;
   --fsm: 1.75rem;
   --fsl: 2.375rem;
+  --smp: 0.5rem;
   --stp: 1rem;
   --mdp: 2rem;
-  --lgp: 2.9735rem;
   --bp: 4.5rem;
 }
 
-@media (min-width: 37.5rem) {
+@media (min-width: 64.0625rem) {
   :root {
     --stf: 1.25rem;
     --fss: 2.125rem;
     --fsm: 3.375rem;
     --fsl: 4.375rem;
-    --stp: 1.25rem;
-    --mdp: 2rem;
-    --lgp: 10.25rem;
+    --smp: 0.75rem;
+    --stp: 2.5rem;
+    --mdp: 5rem;
     --bp: calc(3rem + 2vw);
   }
 }
@@ -115,7 +114,9 @@ table {
   font-weight: 600;
   src: url("./fonts/source-sans-3-v19-latin_latin-ext-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
 
@@ -144,12 +145,12 @@ hgroup p {
   font-size: var(--stf);
 }
 
-main section {
-  margin-block-start: var(--bp);
-}
-
 .maxwidth-container {
   margin-inline: auto;
+}
+
+main section {
+  margin-block-start: var(--bp);
 }
 
 .button {
@@ -165,13 +166,13 @@ main section {
 .button:hover {
   background-color: var(--primary-light);
 }
-@media (min-width: 0rem) and (max-width: 37.4375rem) {
+@media (min-width: 0rem) and (max-width: 64rem) {
   .button {
     padding-block: 0.875rem;
     padding-inline: 1.625rem;
   }
 }
-@media (min-width: 37.5rem) {
+@media (min-width: 64.0625rem) {
   .button {
     padding-block: 1.375rem;
     padding-inline: 2.25rem;
@@ -233,42 +234,42 @@ main section {
     background-color: var(--secondary-dark);
     width: 80%;
     height: 100vh;
-    font-size: var(--fss);
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     gap: var(--mdp);
   }
+  #mainnav ul li:first-child {
+    margin-block-start: calc(var(--mdp) + 1em);
+  }
+  #mainnav ul li a {
+    font-size: var(--fss);
+    text-decoration: none;
+    color: var(--negative);
+  }
   #mainnav #hamburger.mobile-menu-open + ul {
     visibility: visible;
     transform: translateX(0);
   }
-  #mainnav a {
-    color: var(--negative);
-    text-decoration: none;
-  }
-  #mainnav li:first-child {
-    margin-block-start: calc(var(--mdp) + 1em);
-  }
 }
 @media (min-width: 37.5rem) {
-  nav {
+  #mainnav {
     margin-block-start: var(--stp);
     margin-inline-end: var(--stp);
   }
-  nav button#hamburger {
+  #mainnav button#hamburger {
     display: none;
     visibility: hidden;
   }
-  nav ul {
+  #mainnav ul {
     list-style-type: none;
     display: flex;
     justify-content: flex-end;
   }
-  nav ul li {
+  #mainnav ul li {
     display: inline-block;
   }
-  nav ul li a {
+  #mainnav ul li a {
     font-size: var(--stf);
     color: var(--primary-light);
     text-underline-offset: 0.625rem;
@@ -379,7 +380,8 @@ footer .imprint {
   color: var(--primary);
   text-decoration: none;
 }
-footer h2, footer h3 {
+footer h2,
+footer h3 {
   margin-block-start: var(--stp);
 }
 footer ul li a {
@@ -413,13 +415,14 @@ section#workshops .levels .level {
 }
 section#workshops .levels .level > img {
   background-color: var(--secondary);
-  padding: var(--mdp);
   clip-path: circle();
 }
 section#workshops .levels .level .level-text p {
   font-size: var(--stf);
   color: var(--negative);
   margin-block-end: var(--stp);
+  margin-block-start: var(--smp);
+  line-height: 1.2;
 }
 section#workshops .levels .level blockquote {
   display: flex;
@@ -430,7 +433,7 @@ section#workshops .levels .level blockquote p {
   color: var(--negative);
 }
 
-@media (min-width: 0rem) and (max-width: 37.4375rem) {
+@media (min-width: 0rem) and (max-width: 64rem) {
   section#workshops .levels .level {
     display: flex;
     flex-direction: column;
@@ -443,6 +446,7 @@ section#workshops .levels .level blockquote p {
   section#workshops .levels .level > img {
     inline-size: 7.1875rem;
     margin-block-start: -3.59375rem;
+    padding: var(--mdp);
   }
   section#workshops .levels .level .count {
     block-size: 2.3125rem;
@@ -472,7 +476,7 @@ section#workshops .levels .level blockquote p {
     block-size: 3.125rem;
   }
 }
-@media (min-width: 37.5rem) {
+@media (min-width: 64.0625rem) {
   section#workshops .levels {
     display: flex;
     flex-direction: column;
@@ -487,6 +491,12 @@ section#workshops .levels .level blockquote p {
     padding-block: var(--stp);
     padding-inline: var(--stp);
     gap: 4.6875rem;
+  }
+  section#workshops .levels .level > img {
+    padding: min(2.5vw, var(--mdp));
+    width: 100%;
+    align-self: center;
+    min-width: 8rem;
   }
   section#workshops .levels .level .count {
     position: absolute;
@@ -570,79 +580,139 @@ section#workshops .levels .level blockquote p {
     right: calc((var(--stp) + 20px) * -1);
   }
 }
-@media (min-width: 0rem) and (max-width: 37.4375rem) {
-  section#about {
-    background-color: var(--primary-extra-light);
-    padding: var(--mdp) 0;
-  }
-  section#about img {
-    padding-top: var(--mdp);
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    object-position: left;
-  }
-  section#about hgroup {
-    margin: var(--stp);
-    line-height: 1.5rem;
-  }
-  section#about hgroup h2 {
-    font-size: var(--fsm);
-  }
-  section#about .text {
-    margin: var(--stp);
-    line-height: 1.5rem;
-    color: var(--secondary-dark);
-    margin-inline-end: var(--mdp);
-  }
-  section#about .text p {
-    margin: var(--stp) 0;
-  }
-  section#about .button {
-    margin: var(--mdp) 0;
-    color: var(--positive);
+section#about {
+  background-color: var(--primary-extra-light);
+  padding-block: var(--bp);
+}
+section#about .about-wrapper .about-image img {
+  width: 100%;
+}
+section#about .about-wrapper .about-content .text {
+  font-size: var(--stf);
+  line-height: 1.5;
+  color: var(--secondary);
+}
+section#about .about-wrapper .about-content .text * {
+  margin-block-start: var(--stp);
+}
+section#about .about-wrapper .about-content .text .button {
+  color: black;
+}
+
+@media (min-width: 0rem) and (max-width: 64rem) {
+  .about-content {
+    margin-block-start: var(--stp);
+    margin-inline: auto;
+    inline-size: 90vw;
+    max-inline-size: min(90vw, 100rem);
   }
 }
-@media (min-width: 37.5rem) {
-  section#about {
-    background-color: var(--primary-extra-light);
-    padding: var(--lgp) 0;
-  }
+@media (min-width: 64.0625rem) and (max-width: 624.9375rem) {
   section#about .about-wrapper {
+    margin-inline: auto;
+    inline-size: 90vw;
+    max-inline-size: min(90vw, 100rem);
     display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    margin-inline-end: 8.125rem;
-    height: auto;
+    gap: var(--stp);
   }
-  section#about img {
-    display: block;
-    max-width: 100%;
-    object-position: left;
-    margin-inline-start: 8.125rem;
+  section#about .about-wrapper .col {
+    width: 50%;
+  }
+  section#about .about-wrapper .about-image {
+    position: relative;
+  }
+  section#about .about-wrapper .about-image img {
+    position: absolute;
+    height: 100%;
+    object-fit: cover;
+    object-position: 20% center;
   }
   section#about .about-wrapper .about-content {
-    margin: var(--mdp);
-    align-self: stretch;
+    padding: var(--stp);
   }
-  section#about .about-content {
-    display: flex;
-    flex-direction: column;
+}
+section#news {
+  margin-inline: auto;
+  inline-size: 90vw;
+  max-inline-size: min(90vw, 100rem);
+}
+section#news hgroup p {
+  font-weight: 600;
+  font-size: var(--stf);
+  line-height: 1.5rem;
+}
+section#news hgroup h2 {
+  font-weight: 300;
+  font-size: var(--fsm);
+  padding-bottom: var(--stp);
+}
+section#news article img {
+  aspect-ratio: 5/3;
+  object-fit: cover;
+  width: 100%;
+  display: block;
+}
+section#news article {
+  background-color: var(--secondary-extra-light);
+  scroll-snap-align: start;
+  overflow: hidden;
+  flex: 0 0 80%;
+}
+section#news .articleWrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  gap: var(--stp);
+  padding-bottom: var(--bp);
+}
+section#news article .text {
+  padding: var(--stp);
+  line-height: 1.5rem;
+}
+section#news article .text h3 > a {
+  color: var(--primary-dark);
+  text-decoration: none;
+  font-weight: 300;
+  border-bottom: 1px solid;
+  text-wrap: nowrap;
+}
+section#news article .text p {
+  padding-top: var(--stp);
+  padding-bottom: var(--mdp);
+  color: var(--secondary-dark);
+  font-weight: 300;
+}
+section#news article .button {
+  color: black;
+}
+
+@media (min-width: 64.0625rem) {
+  hgroup {
+    line-height: 4rem;
   }
-  section#about hgroup h2 {
-    font-size: var(--fsm);
-  }
-  section#about .text {
+  hgroup p {
     font-size: var(--stf);
+    font-weight: 600;
+  }
+  hgroup h2 {
+    font-size: var(--fsm);
+    font-weight: 300;
+  }
+  .articleWrapper {
+    overflow-x: visible;
+    flex-wrap: wrap;
+    scroll-snap-type: none;
+  }
+  section#news article {
+    flex: 1 1 calc((100% - var(--stp) * 2) / 3);
+    max-width: calc((100% - var(--stp) * 2) / 3);
+    scroll-snap-align: unset;
+  }
+  article .text p {
+    font-size: var(--stf);
+    font-weight: 300;
     color: var(--secondary-dark);
-  }
-  section#about .text p {
-    margin: 1rem 0;
-    line-height: 1.5rem;
-  }
-  section#about .about-content .text .button {
-    color: var(--positive);
-    align-items: flex-end;
   }
 }
 

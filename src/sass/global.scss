@@ -47,12 +47,19 @@ hgroup {
 }
 
 .maxwidth-container {
-  margin-inline: auto;
-  // max-width:
+  @include maxwidth;
+}
+
+.contentwidth-container {
+  @include contentwidth;
 }
 
 main section {
   margin-block-start: var(--bp);
+
+  &:last-child {
+    margin-block-end: var(--bp);
+  }
 }
 
 // ...

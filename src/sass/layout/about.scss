@@ -34,7 +34,7 @@ section#about {
   }
 }
 
-@include breakpoint($desktop, 9999) {
+@include breakpoint($desktop) {
   section#about {
     .about-wrapper {
       @include contentwidth;
